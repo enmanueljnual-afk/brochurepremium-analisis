@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1b2824">
+<meta name="description" content="Unidades premium de 2 y 3 ambientes en San Isidro. Proyecto en pozo con anticipo y hasta 72 cuotas en pesos. Aureo Desarrollos.">
+<title>NOOK | Centenario 2400, San Isidro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1b2824; --vm:#243830; --vc:#2d4a3e;
+  --oro:#b8963e; --oro2:#d4af6a;
+  --crema:#f0ebe0; --co:rgba(240,235,224,0.68); --cs:rgba(240,235,224,0.1);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--verde);color:var(--crema);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+button,a{font-family:var(--sans);cursor:pointer;text-decoration:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;transition:background 0.4s;}
+nav.sc{background:rgba(27,40,36,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,150,62,0.1);}
+.nav-logo{font-family:var(--serif);font-size:22px;letter-spacing:0.22em;color:var(--crema);}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:11px;letter-spacing:0.16em;color:var(--co);transition:color 0.2s;}
+.nav-links a:hover{color:var(--oro);}
+.nav-cta{background:var(--oro);color:#0c0c0c;font-size:10px;letter-spacing:0.2em;font-weight:600;padding:10px 22px;border:none;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 48px 80px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.2;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(27,40,36,0.4),rgba(27,40,36,0.85));}
+.hero-c{position:relative;z-index:1;}
+.hero-eyebrow{font-size:10px;letter-spacing:0.38em;color:var(--oro);margin-bottom:20px;}
+.hero-brand{font-family:var(--serif);font-size:clamp(80px,12vw,140px);color:var(--crema);line-height:0.9;letter-spacing:0.08em;margin-bottom:6px;}
+.hero-addr{font-size:11px;letter-spacing:0.28em;color:var(--co);margin-bottom:36px;}
+.hero-divider{width:64px;height:1px;background:var(--oro);margin:0 auto 36px;}
+.hero-sub{font-size:15px;color:var(--co);line-height:1.8;max-width:480px;margin:0 auto 48px;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.btn-g{background:var(--oro);color:#0c0c0c;font-size:10px;letter-spacing:0.22em;font-weight:600;padding:15px 34px;border:none;transition:opacity 0.2s;}
+.btn-g:hover{opacity:0.85;}
+.btn-o{background:transparent;border:1px solid rgba(184,150,62,0.55);color:var(--oro);font-size:10px;letter-spacing:0.22em;padding:14px 32px;transition:all 0.25s;}
+.btn-o:hover{border-color:var(--oro);background:rgba(184,150,62,0.07);}
+.hero-scroll{font-size:9px;letter-spacing:0.22em;color:rgba(240,235,224,0.28);display:flex;align-items:center;gap:10px;justify-content:center;}
+.scroll-line{width:40px;height:1px;background:linear-gradient(to right,var(--oro),transparent);}
+
+/* SECTIONS */
+section{padding:90px 0;}
+.container{max-width:1160px;margin:0 auto;padding:0 48px;}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.ey-line{width:28px;height:1px;background:var(--oro);}
+.ey-txt{font-size:10px;letter-spacing:0.3em;color:var(--oro);}
+.sec-h{font-family:var(--serif);font-size:clamp(30px,4vw,50px);color:var(--crema);line-height:1.1;font-weight:300;margin-bottom:12px;}
+.sec-h em{font-style:italic;color:var(--oro2);}
+.sec-p{font-size:13px;color:var(--co);line-height:1.85;max-width:500px;margin-bottom:52px;}
+.gold-bar{width:44px;height:1px;background:var(--oro);margin-bottom:48px;}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:56px;}
+.stat{background:var(--vm);padding:28px 20px;text-align:center;}
+.stat-n{font-family:var(--serif);font-size:36px;color:var(--oro);margin-bottom:5px;font-weight:300;}
+.stat-l{font-size:9px;letter-spacing:0.2em;color:var(--co);}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;margin-bottom:56px;height:520px;}
+.g-main{grid-row:span 2;overflow:hidden;}
+.g-side{overflow:hidden;}
+.g-item{width:100%;height:100%;object-fit:cover;transition:transform 0.5s var(--ease);}
+.gallery > div:hover .g-item{transform:scale(1.04);}
+.gallery > div{overflow:hidden;position:relative;}
+.gallery > div::after{content:'';position:absolute;inset:0;background:rgba(27,40,36,0.2);transition:opacity 0.3s;}
+.gallery > div:hover::after{opacity:0;}
+
+/* UNIDADES */
+.u-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:16px;}
+.u-card{background:var(--vm);padding:40px 36px;border-bottom:2px solid transparent;transition:border-color 0.3s;}
+.u-card:hover{border-bottom-color:var(--oro);}
+.u-badge{display:inline-block;background:var(--oro);color:#0c0c0c;font-size:9px;letter-spacing:0.2em;font-weight:600;padding:4px 12px;margin-bottom:14px;}
+.u-name{font-family:var(--serif);font-size:30px;color:var(--crema);margin-bottom:6px;font-weight:300;}
+.u-size{font-size:12px;color:var(--oro2);margin-bottom:20px;}
+.u-feats{margin-bottom:28px;}
+.u-feat{font-size:12px;color:var(--co);margin-bottom:8px;}
+.u-feat::before{content:'— ';color:var(--oro);}
+.u-cta{font-size:10px;letter-spacing:0.14em;color:var(--oro);border-top:1px solid rgba(184,150,62,0.18);padding-top:16px;cursor:pointer;}
+
+/* LIFESTYLE */
+.life-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-bottom:60px;}
+.life-img{position:relative;overflow:hidden;height:360px;cursor:pointer;}
+.life-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s var(--ease);}
+.life-img:hover img{transform:scale(1.05);}
+
+
+/* UBICACIÓN */
+.ub-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.ub-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--cs);}
+.ub-place{font-size:13px;color:var(--crema);}
+.ub-time{font-size:12px;color:var(--oro);}
+
+/* ═══ COMPARATIVA ═══ */
+.comp-section{background:var(--verde);}
+
+/* Gráfico de barras */
+.precio-chart{
+  display:flex;align-items:flex-end;gap:20px;
+  padding:48px;background:var(--vm);
+  margin-bottom:24px;
+  border:1px solid rgba(184,150,62,0.07);
+}
+.p-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.p-val{font-family:var(--serif);font-size:22px;color:var(--crema);font-weight:300;}
+.p-val.destacado{color:var(--oro);}
+.p-bar{width:100%;position:relative;border-radius:1px;}
+.p-bar-fill{width:100%;background:var(--vc);}
+.p-bar.nook .p-bar-fill{background:var(--oro);}
+.p-name{font-size:10px;letter-spacing:0.1em;color:var(--co);text-align:center;line-height:1.4;}
+.p-sub{font-size:9px;color:rgba(240,235,224,0.3);}
+
+/* Tabla comparativa */
+.comp-wrap{overflow-x:auto;margin-bottom:16px;}
+.comp-table{width:100%;border-collapse:collapse;min-width:680px;}
+.comp-table th{
+  padding:14px 20px;font-size:10px;letter-spacing:0.18em;
+  font-weight:500;text-align:left;
+  border-bottom:2px solid var(--oro);
+}
+.comp-table th.nook-h{color:var(--oro);background:rgba(184,150,62,0.08);}
+.comp-table th.other-h{color:var(--co);}
+.comp-table td{
+  padding:13px 20px;font-size:12px;
+  border-bottom:1px solid rgba(240,235,224,0.05);
+}
+.comp-table tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.comp-table td.nook-td{color:var(--crema);background:rgba(184,150,62,0.04);font-weight:500;}
+.comp-table td.other-td{color:var(--co);}
+.comp-table td.label-td{color:rgba(240,235,224,0.42);font-size:11px;}
+.win{color:var(--oro)!important;font-weight:600!important;}
+.comp-note{font-size:11px;color:rgba(240,235,224,0.28);font-style:italic;}
+
+/* Conclusión */
+.conclusion-box{
+  margin-top:40px;background:rgba(184,150,62,0.07);
+  border:1px solid rgba(184,150,62,0.22);padding:36px;
+}
+.conclusion-box h3{font-family:var(--serif);font-size:20px;color:var(--crema);margin-bottom:12px;font-weight:300;}
+.conclusion-box p{font-size:13px;color:var(--co);line-height:1.8;}
+.conclusion-box p+p{margin-top:10px;}
+
+/* INVERSIÓN */
+.inv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-bottom:48px;}
+.inv-card{background:var(--vm);padding:32px 28px;}
+.inv-card-t{font-family:var(--serif);font-size:18px;color:var(--crema);margin-bottom:8px;font-weight:300;}
+.inv-card-line{width:24px;height:1px;background:var(--oro);margin-bottom:12px;}
+.inv-card-d{font-size:12px;color:var(--co);line-height:1.75;}
+
+/* Comparativa de precios simple (sección inversión original) */
+.inv-bars{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+.inv-bar-row{display:flex;align-items:center;gap:14px;}
+.inv-bar-label{font-size:11px;color:var(--co);width:160px;flex-shrink:0;}
+.inv-bar-track{flex:1;height:8px;background:rgba(255,255,255,0.05);border-radius:2px;}
+.inv-bar-fill{height:100%;border-radius:2px;background:var(--vc);}
+.inv-bar-fill.nook{background:var(--oro);}
+.inv-bar-val{font-size:11px;color:var(--crema);width:110px;text-align:right;flex-shrink:0;}
+
+/* FINANCIACIÓN */
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.fin-step{display:flex;gap:18px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--cs);}
+.fin-num{min-width:38px;height:38px;background:var(--oro);display:flex;align-items:center;justify-content:center;font-size:12px;color:#0c0c0c;font-weight:600;flex-shrink:0;}
+.fin-t{font-size:14px;color:var(--crema);font-weight:500;margin-bottom:4px;}
+.fin-d{font-size:12px;color:var(--co);line-height:1.65;}
+.fin-box{background:rgba(184,150,62,0.07);border:1px solid rgba(184,150,62,0.22);padding:32px;}
+.fin-box-ey{font-size:10px;letter-spacing:0.2em;color:var(--oro);margin-bottom:18px;}
+.fin-profile{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(184,150,62,0.15);}
+.fin-profile-t{font-size:13px;color:var(--oro);font-weight:500;margin-bottom:5px;}
+.fin-profile-d{font-size:12px;color:var(--co);line-height:1.65;}
+
+/* CONTACTO */
+.ctc{position:relative;padding:90px 48px;text-align:center;overflow:hidden;}
+.ctc-bg{position:absolute;inset:0;z-index:0;}
+.ctc-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.12);}
+.ctc-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(27,40,36,0.2),rgba(27,40,36,0.9));}
+.ctc-c{position:relative;z-index:1;}
+.ctc-h{font-family:var(--serif);font-size:clamp(34px,5vw,60px);color:var(--crema);line-height:1.05;margin-bottom:8px;font-weight:300;}
+.ctc-h em{font-style:italic;color:var(--oro2);}
+.ctc-bar{width:44px;height:1px;background:var(--oro);margin:24px auto;}
+.ctc-p{font-size:14px;color:var(--co);max-width:420px;margin:0 auto 48px;line-height:1.85;}
+.ctc-info{margin-top:48px;display:flex;gap:40px;justify-content:center;flex-wrap:wrap;}
+.ctc-info span{font-size:11px;color:rgba(240,235,224,0.3);letter-spacing:0.08em;}
+
+/* WA */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:27px;height:27px;fill:#fff;}
+
+/* FOOTER */
+footer{background:var(--vm);padding:32px 48px;border-top:1px solid rgba(184,150,62,0.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:var(--serif);font-size:17px;letter-spacing:0.22em;color:var(--crema);}
+.footer-txt{font-size:11px;color:rgba(240,235,224,0.25);}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .container{padding:0 20px;}
+  section{padding:60px 0;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .gallery{grid-template-columns:1fr 1fr;height:auto;}
+  .g-main{grid-row:auto;height:260px;}
+  .g-side{height:180px;}
+  .u-grid{grid-template-columns:1fr;}
+  .life-grid{grid-template-columns:1fr;}
+  .life-img{height:260px;}
+  .ub-grid{grid-template-columns:1fr;}
+  .precio-chart{padding:24px;gap:10px;}
+  .inv-grid{grid-template-columns:1fr;}
+  .fin-grid{grid-template-columns:1fr;}
+  .ctc{padding:64px 20px;}
+  footer{padding:24px 20px;flex-direction:column;text-align:center;}
+}
+@media(max-width:560px){
+  .inv-bar-label{width:100px;font-size:10px;}
+  .inv-bars .inv-bar-val{width:80px;font-size:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">NOOK</div>
+  <div class="nav-links">
+    <a href="#proyecto">Proyecto</a>
+    <a href="#unidades">Unidades</a>
+    <a href="#comparativa">Comparativa</a>
+    <a href="#inversion">Inversión</a>
+    <a href="#financiacion">Financiación</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <button class="nav-cta" onclick="wa('nav')">CONSULTAR</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="inicio">
+  <div class="hero-bg">
+    <img src="./01.jpg" alt="">
+  </div>
+  <div class="hero-c">
+    <p class="hero-eyebrow">AUREO DESARROLLOS · CENTENARIO 2400 · SAN ISIDRO</p>
+    <h1 class="hero-brand">NOOK</h1>
+    <p class="hero-addr">CENTENARIO 2400 · SAN ISIDRO</p>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Unidades exclusivas de 2 y 3 ambientes.<br>En pozo. Hasta 72 cuotas en pesos.</p>
+    <div class="hero-btns">
+      <button class="btn-g" onclick="wa('invertir')">QUIERO INVERTIR</button>
+      <button class="btn-o" onclick="wa('vivir')">QUIERO VIVIR ACÁ</button>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>DESCUBRÍ MÁS</span></div>
+  </div>
+</div>
+
+<!-- PROYECTO -->
+<section style="background:var(--verde)" id="proyecto">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">EL PROYECTO</span></div>
+    <h2 class="sec-h">Un edificio diseñado<br><em>para vivir bien.</em></h2>
+    <p class="sec-p">NOOK es un proyecto residencial premium en el corazón de San Isidro. 30 unidades exclusivas pensadas para quienes buscan calidad de vida sin resignar ubicación ni accesibilidad.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">PISOS</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">UNIDADES</div></div>
+      <div class="stat"><div class="stat-n">2-3</div><div class="stat-l">AMBIENTES</div></div>
+      <div class="stat"><div class="stat-n">72</div><div class="stat-l">CUOTAS EN $</div></div>
+    </div>
+    <div class="gallery">
+      <div class="g-main"><img class="g-item" src="./01.jpg" alt=""></div>
+      <div class="g-side"><img class="g-item" src="./02.jpg" alt=""></div>
+      <div class="g-side"><img class="g-item" src="./03.jpg" alt=""></div>
+      <div class="g-side"><img class="g-item" src="./04.jpg" alt=""></div>
+      <div class="g-side"><img class="g-item" src="./05.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIDADES -->
+<section style="background:var(--vm)" id="unidades">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">UNIDADES DISPONIBLES</span></div>
+    <h2 class="sec-h"><em>Elegí</em> tu espacio.</h2>
+    <div class="u-grid">
+      <div class="u-card">
+        <div class="u-badge">2 AMB</div>
+        <h3 class="u-name">2 Ambientes</h3>
+        <p class="u-size">52 a 58 m²</p>
+        <div class="u-feats">
+          <div class="u-feat">Living-comedor amplio</div>
+          <div class="u-feat">1 dormitorio</div>
+          <div class="u-feat">1 baño</div>
+          <div class="u-feat">Balcón propio</div>
+        </div>
+        <div class="u-cta" onclick="wa('2amb')">CONSULTAR DISPONIBILIDAD →</div>
+      </div>
+      <div class="u-card" style="border:1px solid rgba(184,150,62,0.3);">
+        <div class="u-badge">3 AMB · MÁS ELEGIDO</div>
+        <h3 class="u-name">3 Ambientes</h3>
+        <p class="u-size">78 a 86 m²</p>
+        <div class="u-feats">
+          <div class="u-feat">Living-comedor</div>
+          <div class="u-feat">2 dormitorios</div>
+          <div class="u-feat">2 baños</div>
+          <div class="u-feat">Balcón</div>
+        </div>
+        <div class="u-cta" onclick="wa('3amb')">CONSULTAR DISPONIBILIDAD →</div>
+      </div>
+    </div>
+    <div style="padding:14px 20px;background:rgba(184,150,62,0.06);border:1px solid rgba(184,150,62,0.15);font-size:12px;color:var(--co)">
+      Todas las unidades incluyen balcón con parrilla y cochera opcional
+    </div>
+  </div>
+</section>
+
+<!-- VIVIR EN NOOK -->
+<section style="background:var(--verde)">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">VIVIR EN NOOK</span></div>
+    <h2 class="sec-h">El barrio que conocés.<br><em>La casa que merecés.</em></h2>
+    <div class="gold-bar"></div>
+    <div class="life-grid">
+      <div class="life-img">
+        <img src="./06.jpg" alt=""><div class="life-cap-t">Ventanales de piso a techo orientados al verde de San Isidro.</div></div>
+      </div>
+      <div class="life-img">
+        <img src="./04.jpg" alt=""><div class="life-cap-t">Cada unidad con balcón propio para extender tu living.</div></div>
+      </div>
+      <div class="life-img">
+        <img src="./07.jpg" alt=""><div class="life-cap-t">Diseño abierto donde cada metro está pensado para vivir.</div></div>
+      </div>
+    </div>
+    <div class="ub-grid">
+      <div>
+        <p style="font-size:10px;letter-spacing:0.24em;color:var(--oro);margin-bottom:20px">UBICACIÓN PRIVILEGIADA</p>
+        <div class="ub-row"><span class="ub-place">Centro San Isidro</span><span class="ub-time">5 min</span></div>
+        <div class="ub-row"><span class="ub-place">Estación de tren</span><span class="ub-time">8 min</span></div>
+        <div class="ub-row"><span class="ub-place">Principales colegios</span><span class="ub-time">10 min</span></div>
+        <div class="ub-row"><span class="ub-place">Acceso autopista</span><span class="ub-time">7 min</span></div>
+        <div class="ub-row"><span class="ub-place">Gastronomía y comercios</span><span class="ub-time">5 min</span></div>
+        <button class="btn-g" style="margin-top:28px" onclick="wa('visita')">COORDINAR VISITA</button>
+      </div>
+      <div>
+        <img src="./08.jpg" alt="" style="width:100%;height:320px;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COMPARATIVA DE MERCADO — SECCIÓN NUEVA
+     ═══════════════════════════════════════════ -->
+<section class="comp-section" id="comparativa">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">COMPARATIVA DE MERCADO</span></div>
+    <h2 class="sec-h">NOOK frente a la<br><em>competencia en San Isidro.</em></h2>
+    <p class="sec-p">Emprendimientos activos de 2 y 3 ambientes en zona norte GBA · Mayo 2025</p>
+
+    <!-- Gráfico de barras -->
+    <div class="precio-chart">
+      <div class="p-bar-wrap">
+        <div class="p-val destacado">2.400</div>
+        <div class="p-bar nook" style="height:180px"><div class="p-bar-fill" style="height:100%"></div></div>
+        <div class="p-name">NOOK<br><span class="p-sub">En pozo</span></div>
+      </div>
+      <div class="p-bar-wrap">
+        <div class="p-val">2.600</div>
+        <div class="p-bar" style="height:196px"><div class="p-bar-fill" style="height:100%"></div></div>
+        <div class="p-name">Bosco La Horqueta<br><span class="p-sub">En pozo</span></div>
+      </div>
+      <div class="p-bar-wrap">
+        <div class="p-val">2.900</div>
+        <div class="p-bar" style="height:218px"><div class="p-bar-fill" style="height:100%"></div></div>
+        <div class="p-name">La Clementina SI<br><span class="p-sub">En construcción</span></div>
+      </div>
+      <div class="p-bar-wrap">
+        <div class="p-val">3.200</div>
+        <div class="p-bar" style="height:240px"><div class="p-bar-fill" style="height:100%"></div></div>
+        <div class="p-name">San Isidro Centro<br><span class="p-sub">Terminado</span></div>
+      </div>
+      <div class="p-bar-wrap">
+        <div class="p-val">4.200</div>
+        <div class="p-bar" style="height:315px"><div class="p-bar-fill" style="height:100%"></div></div>
+        <div class="p-name">CABA Premium<br><span class="p-sub">Terminado</span></div>
+      </div>
+    </div>
+    <p class="comp-note" style="margin-bottom:48px">* USD/m² referenciales al m² cubierto · Mercado mayo 2025 · Zonaprop / Argenprop</p>
+
+    <!-- Tabla comparativa -->
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="other-h" style="width:22%">CRITERIO</th>
+            <th class="nook-h">NOOK · CENTENARIO 2400</th>
+            <th class="other-h">BOSCO LA HORQUETA</th>
+            <th class="other-h">LA CLEMENTINA SI</th>
+            <th class="other-h">TERMINADO SI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-td">Precio/m²</td>
+            <td class="nook-td win">USD 2.400</td>
+            <td class="other-td">~USD 2.600</td>
+            <td class="other-td">~USD 2.900</td>
+            <td class="other-td">~USD 3.200</td>
+          </tr>
+          <tr>
+            <td class="label-td">Etapa</td>
+            <td class="nook-td win">En pozo</td>
+            <td class="other-td">En pozo</td>
+            <td class="other-td">En construcción</td>
+            <td class="other-td">Terminado</td>
+          </tr>
+          <tr>
+            <td class="label-td">Entrega</td>
+            <td class="nook-td">2027 est.</td>
+            <td class="other-td">Dic 2026/27</td>
+            <td class="other-td">Abril 2028</td>
+            <td class="other-td">Inmediata</td>
+          </tr>
+          <tr>
+            <td class="label-td">Financiación</td>
+            <td class="nook-td win">72 cuotas en $</td>
+            <td class="other-td">Cuotas CAC</td>
+            <td class="other-td">Cuotas CAC</td>
+            <td class="other-td">Contado / banco</td>
+          </tr>
+          <tr>
+            <td class="label-td">Pileta</td>
+            <td class="nook-td win">Sí</td>
+            <td class="other-td">Sí</td>
+            <td class="other-td">Sí</td>
+            <td class="other-td">Consultar</td>
+          </tr>
+          <tr>
+            <td class="label-td">Cowork</td>
+            <td class="nook-td win">Cowork-Bar</td>
+            <td class="other-td">Sala reuniones</td>
+            <td class="other-td">No</td>
+            <td class="other-td">No</td>
+          </tr>
+          <tr>
+            <td class="label-td">Unidades exclusivas</td>
+            <td class="nook-td win">2, 3 y 4 amb</td>
+            <td class="other-td">Estándar</td>
+            <td class="other-td">Estándar</td>
+            <td class="other-td">Estándar</td>
+          </tr>
+          <tr>
+            <td class="label-td">Arquitectura de autor</td>
+            <td class="nook-td win">Natanson Castrilli</td>
+            <td class="other-td">—</td>
+            <td class="other-td">—</td>
+            <td class="other-td">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="comp-note">* Datos relevados de Zonaprop · Mayo 2025 · Verificar disponibilidad actual</p>
+
+    <!-- Conclusión -->
+    <div class="conclusion-box">
+      <h3>La conclusión es simple.</h3>
+      <p>NOOK entra al mercado al precio más bajo de los proyectos en pozo comparables de zona norte, con la financiación más extensa del segmento — 72 cuotas en pesos sin banco ni garante — y los únicos amenities premium de la categoría: Cowork-Bar, pileta y terraza con parrilla.</p>
+      <p>El diferencial entre USD 2.400/m² en pozo y USD 3.200/m² en zona terminada es exactamente el retorno del inversor que tomó la decisión hoy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INVERSIÓN -->
+<section style="background:var(--vm)" id="inversion">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">OPORTUNIDAD DE INVERSIÓN</span></div>
+    <h2 class="sec-h">El momento <em>es ahora.</em></h2>
+    <p class="sec-p">Precio de pozo, ubicación premium, financiación accesible. La ecuación que los inversores buscan.</p>
+    <div class="inv-grid">
+      <div class="inv-card">
+        <div class="inv-card-t">Valor en ascenso</div>
+        <div class="inv-card-line"></div>
+        <div class="inv-card-d">San Isidro lidera la revalorización en zona norte. Invertir en pozo multiplica el retorno.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-card-t">Respaldo sólido</div>
+        <div class="inv-card-line"></div>
+        <div class="inv-card-d">Aureo Desarrollos con trayectoria comprobada en proyectos residenciales premium de zona norte.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-card-t">Sin intermediarios</div>
+        <div class="inv-card-line"></div>
+        <div class="inv-card-d">Financiación directa. Sin banco, sin garante. Anticipo flexible + cuotas en pesos.</div>
+      </div>
+    </div>
+    <div style="background:var(--verde);padding:32px;margin-bottom:16px;">
+      <p style="font-size:10px;letter-spacing:0.2em;color:var(--oro);margin-bottom:20px">COMPARATIVA DE PRECIOS · USD/M²</p>
+      <div class="inv-bars">
+        <div class="inv-bar-row">
+          <div class="inv-bar-label">CABA Premium</div>
+          <div class="inv-bar-track"><div class="inv-bar-fill" style="width:100%"></div></div>
+          <div class="inv-bar-val">USD 4.500/m²</div>
+        </div>
+        <div class="inv-bar-row">
+          <div class="inv-bar-label">San Isidro Centro</div>
+          <div class="inv-bar-track"><div class="inv-bar-fill" style="width:71%"></div></div>
+          <div class="inv-bar-val">USD 3.200/m²</div>
+        </div>
+        <div class="inv-bar-row">
+          <div class="inv-bar-label" style="color:var(--oro)">NOOK (en pozo)</div>
+          <div class="inv-bar-track"><div class="inv-bar-fill nook" style="width:53%"></div></div>
+          <div class="inv-bar-val" style="color:var(--oro)">USD 2.400/m²</div>
+        </div>
+      </div>
+      <p style="font-size:10px;color:rgba(240,235,224,0.25);font-style:italic">*Valores referenciales al m² cubierto. Mayo 2025.</p>
+    </div>
+    <div style="background:rgba(184,150,62,0.06);border:1px solid rgba(184,150,62,0.18);padding:32px;text-align:center">
+      <p style="font-size:13px;color:var(--co);margin-bottom:20px">¿Querés analizar números concretos para tu inversión?</p>
+      <button class="btn-g" onclick="wa('invertir')">SOLICITAR ANÁLISIS DE INVERSIÓN</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIACIÓN -->
+<section style="background:var(--verde)" id="financiacion">
+  <div class="container">
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-txt">FINANCIACIÓN</span></div>
+    <h2 class="sec-h">Sin banco.<br><em>Sin garante.</em></h2>
+    <div class="gold-bar"></div>
+    <div class="fin-grid">
+      <div>
+        <div class="fin-step"><div class="fin-num">01</div><div><p class="fin-t">Elegí tu unidad</p><p class="fin-d">2 o 3 ambientes según tu objetivo y presupuesto.</p></div></div>
+        <div class="fin-step"><div class="fin-num">02</div><div><p class="fin-t">Definí el anticipo</p><p class="fin-d">Flexible según tu disponibilidad. La reunión con Enmanuel define la estructura óptima.</p></div></div>
+        <div class="fin-step"><div class="fin-num">03</div><div><p class="fin-t">Cuotas en pesos</p><p class="fin-d">Hasta 72 cuotas mensuales ajustadas por CAC. Sin banco, sin garante.</p></div></div>
+        <div class="fin-step" style="border:none"><div class="fin-num">04</div><div><p class="fin-t">Posesión 2027</p><p class="fin-d">Entrega estimada del proyecto. Escrituración al momento de la entrega.</p></div></div>
+      </div>
+      <div>
+        <div class="fin-box">
+          <p class="fin-box-ey">LA CLAVE PARA CADA PERFIL</p>
+          <div class="fin-profile">
+            <p class="fin-profile-t">Si querés invertir:</p>
+            <p class="fin-profile-d">Cuotas en pesos = capital en USD libre. El activo se valoriza en dólares mientras las cuotas se licúan con la inflación. El diferencial es tu retorno real.</p>
+          </div>
+          <div>
+            <p class="fin-profile-t" style="color:var(--crema)">Si querés vivir acá:</p>
+            <p class="fin-profile-d">¿Con qué cuota mensual estarías cómodo? Eso define qué unidad te armamos. Sin hipoteca ni garante propietario.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px">
+            <button class="btn-g" onclick="wa('invertir')">SIMULAR INVERSIÓN</button>
+            <button class="btn-o" onclick="wa('vivir')">VER MI OPCIÓN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section style="padding:0" id="contacto">
+  <div class="ctc">
+    <div class="ctc-bg">
+      <img src="./09.jpg" alt="">
+    </div>
+    <div class="ctc-c">
+      <h2 class="ctc-h">NOOK<br><em>San Isidro</em></h2>
+      <p style="font-size:11px;letter-spacing:0.2em;color:rgba(240,235,224,0.35);margin-bottom:8px">TU PRÓXIMO PASO EMPIEZA CON UNA CONVERSACIÓN</p>
+      <div class="ctc-bar"></div>
+      <p class="ctc-p">Contanos qué estás buscando. En 20 minutos Enmanuel te muestra los números reales, la disponibilidad y la estructura de pago que más te conviene.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-g" onclick="wa('vivir')">QUIERO VIVIR ACÁ</button>
+        <button class="btn-o" onclick="wa('invertir')">QUIERO INVERTIR</button>
+      </div>
+      <div class="ctc-info">
+        <span>Centenario 2400, San Isidro</span>
+        <span>+54 11 7369-7105</span>
+        <span>info@nooksanisidro.com</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">NOOK · SAN ISIDRO</div>
+  <div class="footer-txt">© 2026 · Aureo Desarrollos · Natanson Castrilli & Asociados · Todos los derechos reservados</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5491173697105?text=Hola%20Enmanuel%2C%20vi%20el%20sitio%20de%20NOOK%20San%20Isidro%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const WA="5491173697105";
+const MSGS={
+  invertir:"Hola Enmanuel, vi el sitio de NOOK San Isidro. Lo evalúo como inversión y quiero analizar los números.",
+  vivir:"Hola Enmanuel, vi el sitio de NOOK San Isidro. Estoy buscando un departamento para vivir y quiero conocer las unidades.",
+  visita:"Hola Enmanuel, quiero coordinar una visita a NOOK Centenario 2400, San Isidro.",
+  '2amb':"Hola Enmanuel, vi el sitio de NOOK y me interesa consultar por las unidades de 2 ambientes.",
+  '3amb':"Hola Enmanuel, vi el sitio de NOOK y me interesa consultar por las unidades de 3 ambientes.",
+  nav:"Hola Enmanuel, vi el sitio de NOOK San Isidro y quiero más información.",
+};
+function wa(t){
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(MSGS[t]||MSGS.nav),"_blank");
+  try{fbq('track','Lead',{content_name:'NOOK San Isidro',content_category:t});}catch(e){}
+}
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
+</script>
+</body>
+</html>
